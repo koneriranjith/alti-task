@@ -6,6 +6,7 @@
       "body-type": "Hatchback",
       "modal": "Wagon R",
       "brand": "Tata",
+      "brand-id": "1",
       "owner": "1st Owner",
       "price": 2000000,
       "fuel-type": "Petrol",
