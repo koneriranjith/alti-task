@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Brand } from "interfaces/brand";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import {
@@ -12,15 +12,7 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = (props) => {
   const { loading, brands, selectedBrand } = useAppSelector(brandSelector);
-
   const dispatch = useAppDispatch();
-
-  // const [brands, setBrands] = useState<Brand[]>([]);
-  // const [selectedBrand, setSelectedBrand] = useState<Brand>({
-  //   name: "",
-  //   logo: "",
-  //   id: "",
-  // });
 
   useEffect(() => {
     dispatch(fetchBrands());
