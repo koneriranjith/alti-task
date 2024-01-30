@@ -29,6 +29,7 @@ const Home: React.FC<HomeProps> = (props) => {
   return (
     <div className="container">
       <section className="brands">
+        <h2>Brands</h2>
         {loading ? <p>Loading..</p> : null}
         <ul>
           {!loading && brands.length
@@ -47,6 +48,11 @@ const Home: React.FC<HomeProps> = (props) => {
             : null}
         </ul>
       </section>
+      {selectedBrand.id ? (
+        <section className="product-form">
+          <h2>Add Product For {selectedBrand.name}</h2>
+        </section>
+      ) : null}
     </div>
   );
 };
