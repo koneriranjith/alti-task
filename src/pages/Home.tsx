@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
-import { Brand } from "interfaces/brand";
+
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import {
   brandSelector,
   fetchBrands,
   selectBrand,
 } from "../redux/Slice/brandSlice";
+import CarForm from "components/CarForm";
+
+import { Car } from "interfaces/car";
+import { Brand } from "interfaces/brand";
+
 interface HomeProps {
   // Define your props here if needed
 }
@@ -18,6 +23,11 @@ const Home: React.FC<HomeProps> = (props) => {
     dispatch(fetchBrands());
   }, []);
 
+  const onSubmit = (data: Car) => {
+    data.id = new Date().getTime().toString();
+    console.log(data);
+  };
+
   return (
     <div className="container">
       <section className="brands">
@@ -29,7 +39,7 @@ const Home: React.FC<HomeProps> = (props) => {
                 <li
                   key={brand.id}
                   className={`${
-                    brand.id == selectedBrand.id ? "selected" : ""
+                    brand.id === selectedBrand.id ? "selected" : ""
                   }`}
                   onClick={() => dispatch(selectBrand(brand))}
                 >
@@ -43,6 +53,7 @@ const Home: React.FC<HomeProps> = (props) => {
       {selectedBrand.id ? (
         <section className="product-form">
           <h2>Add Product For {selectedBrand.name}</h2>
+          <CarForm onSubmit={onSubmit} selectedBrand={selectedBrand} />
         </section>
       ) : null}
     </div>

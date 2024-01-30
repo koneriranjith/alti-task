@@ -1,5 +1,5 @@
 .container {
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -9,7 +9,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 700px;
   background-color: #ccc;
   padding: 40px;
   border-radius: 20px;
@@ -53,4 +52,47 @@
 .brands .selected {
   border: 3px solid red;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* car form */
+
+.car-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.car-form label {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.car-form input[type="text"],
+input[type="number"] {
+  margin: 8px;
+  height: 22px;
+}
+
+.car-form input[type="date"] {
+  margin: 8px;
+  height: 26px;
+  width: 142px;
+}
+
+.car-form select {
+  margin: 8px;
+  height: 26px;
+  width: 147px;
+}
+
+.car-form button {
+  width: 100%;
+  background: skyblue;
+  padding: 8px;
+  border-radius: 7px;
+  border: 1px solid #000;
+  margin-top: 13px;
 }
