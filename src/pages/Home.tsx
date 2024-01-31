@@ -6,6 +6,7 @@ import {
   fetchBrands,
   selectBrand,
 } from "../redux/Slice/brandSlice";
+import { createProduct } from "../redux/Slice/productSlice";
 import CarForm from "components/CarForm";
 
 import { Car } from "interfaces/car";
@@ -23,9 +24,12 @@ const Home: React.FC<HomeProps> = (props) => {
     dispatch(fetchBrands());
   }, []);
 
-  const onSubmit = (data: Car) => {
+  const onSubmit = async (data: Car) => {
     data.id = new Date().getTime().toString();
-    console.log(data);
+    const res = await dispatch(createProduct(data));
+    if (res) {
+      dispatch(selectBrand({ id: "", logo: "", name: "" }));
+    }
   };
 
   return (

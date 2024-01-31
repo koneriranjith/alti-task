@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { Brand } from "interfaces/brand";
 import { Car } from "interfaces/car";
 
@@ -16,24 +16,40 @@ interface CarFormProps {
   selectedBrand: Brand;
 }
 
+const initialData: Car = {
+  id: "",
+  location: "",
+  bodyType: "",
+  modal: "",
+  brand: "",
+  brandId: "",
+  owner: "",
+  price: 0,
+  fuelType: "",
+  transmission: "",
+  image: "",
+  color: "",
+  yearOfManufacturing: "",
+  insuranceValidUpto: "",
+  kms: 0,
+};
+
 const CarForm: React.FC<CarFormProps> = ({ onSubmit, selectedBrand }) => {
-  const [formData, setFormData] = useState<Car>({
-    id: "",
-    location: "",
-    bodyType: "",
-    modal: "",
-    brand: "",
-    brandId: "",
-    owner: "",
-    price: 0,
-    fuelType: "",
-    transmission: "",
-    image: "",
-    color: "",
-    yearOfManufacturing: "",
-    insuranceValidUpto: "",
-    kms: 0,
-  });
+  const [formData, setFormData] = useState<Car>(initialData);
+
+  useEffect(() => {
+    setFormData((prevData) => ({
+      ...prevData,
+      brand: selectedBrand.name,
+      brandId: selectedBrand.id,
+    }));
+  }, [selectedBrand.id]);
+
+  useEffect(() => {
+    return () => {
+      setFormData(initialData);
+    };
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>

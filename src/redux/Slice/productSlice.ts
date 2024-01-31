@@ -20,7 +20,7 @@ export const fetchProducts = createAsyncThunk(
 
 export const createProduct = createAsyncThunk(
   "product/createProduct",
-  async (data) => {
+  async (data: Car) => {
     const response = Api.post("/products", data);
     return response;
   }
@@ -55,12 +55,12 @@ const productSlice = createSlice({
       createProduct.fulfilled,
       (state, action: PayloadAction<Car[]>) => {
         state.loading = false;
-        state.products = action.payload;
+        // state.products = action.payload;
       }
     );
     builder.addCase(createProduct.rejected, (state, action) => {
       state.loading = false;
-      state.products = [];
+      // state.products = [];
       state.error = action.error.message;
     });
   },
