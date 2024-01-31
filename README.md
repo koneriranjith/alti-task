@@ -2,6 +2,8 @@
 
 In the project directory, you can run:
 
+In this project i'm using json server to access the db.json file and for that I have added script in package.json "db-start"
+
 step 1: need to run json server to access db.json
 
 ### `npm run db-start`
