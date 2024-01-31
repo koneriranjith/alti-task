@@ -2,18 +2,8 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { RootState } from "redux/store";
 import Api from "../api-client";
+import { Brand, BrandState } from "interfaces/brand";
 
-export interface Brand {
-  id: string;
-  logo: string;
-  name: string;
-}
-export interface BrandState {
-  loading: boolean;
-  brands: Array<Brand>;
-  error: string | undefined;
-  selectedBrand: Brand;
-}
 const initialState: BrandState = {
   loading: false,
   brands: [],

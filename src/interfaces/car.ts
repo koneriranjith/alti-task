@@ -15,3 +15,9 @@ export interface Car {
   insuranceValidUpto: string;
   kms: number;
 }
+
+export interface ProductState {
+  loading: boolean;
+  products: Array<Car>;
+  error: string | undefined;
+}
