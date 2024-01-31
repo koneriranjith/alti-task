@@ -98,3 +98,33 @@ input[type="number"] {
   border: 1px solid #000;
   margin-top: 13px;
 }
+
+/* product page */
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.filter {
+  width: 30%;
+  background-color: #e0e0e0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.products {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  background-color: #f0f0f0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.cmp-checkbox {
+  margin-top: 10px;
+  padding: 10px;
+}

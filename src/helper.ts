@@ -4,6 +4,20 @@ export const TransmissionOptions = [
   { label: "Select", value: "" },
 ];
 
+export const brandOptions = [
+  { label: "Tata", value: "Tata" },
+  { label: "Hyundai", value: "Hyundai" },
+  { label: "Renault", value: "Renault" },
+  { label: "Honda", value: "Honda" },
+  { label: "Suziki", value: "Suziki" },
+  { label: "Ford", value: "Ford" },
+  { label: "Mahindra", value: "Mahindra" },
+  { label: "Toyota", value: "Toyota" },
+  { label: "Benz", value: "Benz" },
+  { label: "BMW", value: "BMW" },
+  { label: "Select", value: "" },
+];
+
 export const ownerOptions = [
   { label: "1st Owner", value: "1st Owner" },
   { label: "2nd Owner", value: "2nd Owner" },

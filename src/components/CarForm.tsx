@@ -10,6 +10,7 @@ import {
   colorOptions,
   LocationOptions,
 } from "../helper";
+import { useToast } from "../context/ToastContext";
 
 interface CarFormProps {
   onSubmit: (formData: Car) => void;
@@ -36,6 +37,7 @@ const initialData: Car = {
 
 const CarForm: React.FC<CarFormProps> = ({ onSubmit, selectedBrand }) => {
   const [formData, setFormData] = useState<Car>(initialData);
+  const toast = useToast();
 
   useEffect(() => {
     setFormData((prevData) => ({
@@ -100,6 +102,7 @@ const CarForm: React.FC<CarFormProps> = ({ onSubmit, selectedBrand }) => {
       );
     } else {
       onSubmit(formData);
+      toast.success("successfully created!");
     }
   };
 

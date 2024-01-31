@@ -7,6 +7,7 @@ import Home from "pages/Home";
 import Services from "pages/Services";
 import ContactUs from "pages/ContactUs";
 import Gallery from "pages/Gallery";
+import Products from "pages/Products";
 
 const MainRouter = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const MainRouter = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
       },
       {
         path: "/services",
